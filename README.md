@@ -4,14 +4,14 @@
 
 To built a classification methodology to predict the quality of wafer sensors based on the given training data. 
 
-<b>Data Description:</b>
+<b>Data Description</b>
 
 The data contains wafer names and 590 column of different sensor values for each wafer. The target column has Good/Bad value for each wafer. This is converted to two unique values +1 and -1
 +1 represents Bad wafer
 -1 represents Good wafer
 
 
-<b>Data Validation:</b>
+<b>Data Validation</b>
 
 In this step, different sets of validation was performed on the given set of training files.  
     
