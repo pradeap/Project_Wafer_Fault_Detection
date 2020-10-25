@@ -4,14 +4,14 @@
 
 To built a classification methodology to predict the quality of wafer sensors based on the given training data. 
 
-Data Description: 
+<b>Data Description:</b>
 
 The data contains wafer names and 590 column of different sensor values for each wafer. The target column has Good/Bad value for each wafer. This is converted to two unique values +1 and -1
 +1 represents Bad wafer
 -1 represents Good wafer
 
 
-Data Validation: 
+<b>Data Validation:</b>
 
 In this step, different sets of validation was performed on the given set of training files.  
     
@@ -26,7 +26,7 @@ In this step, different sets of validation was performed on the given set of tra
 
    5. Null values in columns - If any of the columns in a file have all the values as NULL or missing,   discard such a file and move it to "Bad_Data_Folder".
 
-Data Insertion in Database
+<b>Data Insertion in Database</b>
  
   1. Database Creation and connection - Create a database with the given name passed. If the database is already created, open the connection to the database.
 
@@ -36,27 +36,27 @@ Data Insertion in Database
   3. Insertion of files in the table - All the files in the "Good_Data_Folder" are inserted in the above-created table. If any file has invalid data type in any        of the columns, the file is not loaded in the table and is moved to "Bad_Data_Folder".
 
 
-Model Training 
+<b>Model Training</b>
 
-   1. Data Export from Db - The data in a stored database is exported as a CSV file to be used for model training.
+1. Data Export from Db - The data in a stored database is exported as a CSV file to be used for model training.
 
-   2. Data Preprocessing
+2. Data Preprocessing
 
    a. Check for null values in the columns. If present, impute the null values using the KNN imputer.
    b. Check if any column has zero standard deviation, remove such columns as they don't give any information during model training.
 
-   3. Clustering - KMeans algorithm is used to create clusters in the preprocessed data. The optimum number of clusters is selected by plotting the elbow plot,         and for the dynamic selection of the number of clusters, we are using "KneeLocator" function. The idea behind clustering is to implement different                 algorithms
+3. Clustering - KMeans algorithm is used to create clusters in the preprocessed data. The optimum number of clusters is selected by plotting the elbow plot,         and for the dynamic selection of the number of clusters, we are using "KneeLocator" function. The idea behind clustering is to implement different                 algorithms
 
    To train data in different clusters. The Kmeans model is trained over preprocessed data and the model is saved for further use in prediction.
 
 
-4) Model Selection 
+4. Model Selection 
      After clusters are created, the best model for each cluster was found. Here two algorithms, "Random Forest" and "XGBoost" are considered. For each cluster,        both the algorithms are passed with the best parameters derived from GridSearch. The AUC scores for both models  were calculated and selected the model with      the best score. Similarly, the model is selected for each cluster. All the models for every cluster are saved for use in prediction.
  
  
  
  
-Prediction Data Description
+<b>Prediction Data Description</b>
  
 The data was available in multiple set of files in batches at a given location. Data contains Wafer names and 590 columns of different sensor values for each wafer. 
 
@@ -67,7 +67,7 @@ Name of the files, Length of Date value in FileName, Length of Time value in Fil
 
 
 
-Data Validation  
+<b>Data Validation</b>  
 In this step, different sets of validation on the given set of training files was performed. 
 
 1. Name Validation- Validated the name of the files on the basis of given Name in the schema file. Created a regex pattern as per the name given in schema file, to use for validation. After validating the pattern in the name, the length of date in the file name as well as length of time in the file name was verified. If all the values are as per requirement, such files are moved to "Good_Data_Folder" else to "Bad_Data_Folder".
@@ -80,7 +80,7 @@ In this step, different sets of validation on the given set of training files wa
 
 5. Null values in columns - If any of the columns in a file has all the values as NULL or missing, we discard such file and move it to "Bad_Data_Folder".
 
-Data Insertion in Database 
+<b>Data Insertion in Database</b> 
 
 1. Database Creation and connection - Created database with the given name passed. If the database is already created, open the connection to the database.
 
@@ -89,7 +89,7 @@ Data Insertion in Database
 3. Insertion of files in the table - All the files in the "Good_Data_Folder" are inserted in the above-created table. If any file has invalid data type in any of the columns, the file is not loaded in the table and is moved to "Bad_Data_Folder".
 
 
-Prediction 
+<b>Prediction</b> 
  
 1. Data Export from Db - The data in the stored database is exported as a CSV file to be used for prediction.
 
