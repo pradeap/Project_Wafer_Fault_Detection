@@ -28,6 +28,7 @@ In this step, different sets of validation was performed on the given set of tra
 
 <b>Data Insertion in Database</b>
  
+ 
   1. Database Creation and connection - Create a database with the given name passed. If the database is already created, open the connection to the database.
 
   2. Table creation in the database - Table with name - "Good_Data", is created in the database for inserting the files in the "Good_Data_Folder" based on given        column names and datatype in the schema file. If the table is already present, then the new table is not created and new files are inserted in the already        present table as we want training to be done on new as well as old training files.
