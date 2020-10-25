@@ -2,7 +2,7 @@
 
 ## Objective : 
 
-To built a classification methodology to predict the quality of wafer sensors based on the given training data. 
+To built a classification methodology to predict the quality of wafer based on the sensor data. 
 
 <b>Data Description</b>
 
